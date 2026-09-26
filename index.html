@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Secure Password Generator | Avinash</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- THEME BUTTON -->
+
+        <button
+            id="themeButton"
+            type="button"
+            onclick="toggleTheme()"
+            title="Toggle Dark Mode"
+        >
+            🌙
+        </button>
+
+
+        <!-- LOCK ICON -->
+
+        <div class="lock-icon">
+            🔐
+        </div>
+
+
+        <!-- HEADING -->
+
+        <h1>
+            Random Password Generator
+        </h1>
+
+        <p class="subtitle">
+            Create strong, secure & random passwords instantly
+        </p>
+
+
+        <!-- PASSWORD BOX -->
+
+        <div class="password-box">
+
+            <p id="password">
+                Your password will appear here
+            </p>
+
+            <div class="password-actions">
+
+                <button
+                    id="showButton"
+                    type="button"
+                    onclick="togglePassword()"
+                    title="Show / Hide Password"
+                >
+                    👁️
+                </button>
+
+                <button
+                    id="copyButton"
+                    type="button"
+                    onclick="copyPassword()"
+                >
+                    Copy
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PASSWORD LENGTH -->
+
+        <div class="length-section">
+
+            <div class="length-header">
+
+                <label for="length">
+                    Password Length
+                </label>
+
+                <span id="lengthValue">
+                    12
+                </span>
+
+            </div>
+
+            <input
+                type="range"
+                id="length"
+                min="4"
+                max="32"
+                value="12"
+                oninput="updateLength()"
+            >
+
+        </div>
+
+
+        <!-- CHARACTER OPTIONS -->
+
+        <div class="options">
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="uppercase"
+                    checked
+                >
+                Uppercase (A-Z)
+            </label>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="lowercase"
+                    checked
+                >
+                Lowercase (a-z)
+            </label>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="numbers"
+                    checked
+                >
+                Numbers (0-9)
+            </label>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="symbols"
+                    checked
+                >
+                Special Characters
+            </label>
+
+        </div>
+
+
+        <!-- GENERATE BUTTON -->
+
+        <button
+            class="generate-button"
+            type="button"
+            onclick="generatePassword()"
+        >
+            🔐 Generate Password
+        </button>
+
+
+        <!-- PASSWORD STRENGTH -->
+
+        <div class="strength-section">
+
+            <p id="strength">
+                Password Strength: -
+            </p>
+
+            <div class="strength-bar">
+                <div id="strengthFill"></div>
+            </div>
+
+        </div>
+
+
+        <!-- PASSWORD HISTORY -->
+
+        <div class="history-section">
+
+            <div class="history-header">
+
+                <h2>
+                    🕘 Password History
+                </h2>
+
+                <button
+                    id="clearHistoryButton"
+                    type="button"
+                    onclick="clearHistory()"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div id="historyList">
+
+                <p class="empty-history">
+                    No passwords generated yet.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SECURITY TIPS -->
+
+        <div class="security-tips">
+
+            <h2>
+                🛡️ Security Tips
+            </h2>
+
+            <p>
+                • Use a different password for every account.
+            </p>
+
+            <p>
+                • Prefer long passwords with mixed characters.
+            </p>
+
+            <p>
+                • Never share your password with anyone.
+            </p>
+
+        </div>
+
+
+        <!-- CLEAR PASSWORD -->
+
+        <button
+            class="clear-button"
+            type="button"
+            onclick="clearPassword()"
+        >
+            Clear Current Password
+        </button>
+
+
+        <!-- CREATOR -->
+
+        <div class="creator-section">
+
+            <div class="creator-line"></div>
+
+            <p class="creator-label">
+                Designed & Developed by
+            </p>
+
+            <h2>
+                Avinash
+            </h2>
+
+            <p class="creator-description">
+                A privacy-focused web project built with
+                HTML, CSS & JavaScript.
+            </p>
+
+            <div class="creator-badge">
+                💻 Built from scratch • 🔐 Client-side generation
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            🔐 Passwords are generated locally in your browser.
+
+            <br>
+
+            ©️ 2026 Avinash • Random Password Generator
+
+        </footer>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

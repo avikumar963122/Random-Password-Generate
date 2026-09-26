@@ -1,0 +1,943 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e3a8a,
+        #312e81
+    );
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 20px;
+
+    transition: background 0.4s ease;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    position: relative;
+
+    background: #ffffff;
+
+    width: 100%;
+
+    max-width: 520px;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* =========================
+   LOCK ICON
+========================= */
+
+.lock-icon {
+    font-size: 45px;
+
+    margin-bottom: 8px;
+
+    animation: lockAnimation 2s infinite;
+}
+
+@keyframes lockAnimation {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+#themeButton {
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #e2e8f0;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    margin: 0;
+
+    line-height: 1;
+
+    z-index: 10;
+
+    appearance: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+#themeButton:hover {
+    transform:
+        rotate(20deg)
+        scale(1.05);
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+    margin: 0;
+
+    font-size: 30px;
+
+    color: #111827;
+}
+
+.subtitle {
+    color: #64748b;
+
+    margin-top: 8px;
+
+    margin-bottom: 25px;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   PASSWORD BOX
+========================= */
+
+.password-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #f1f5f9;
+
+    border: 2px dashed #cbd5e1;
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    transition: 0.4s;
+}
+
+.password-box p {
+    flex: 1;
+
+    margin: 0;
+
+    padding: 10px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #111827;
+
+    word-break: break-all;
+
+    transition: 0.4s;
+}
+
+
+/* =========================
+   PASSWORD ACTIONS
+========================= */
+
+.password-actions {
+    display: flex;
+
+    gap: 6px;
+}
+
+.password-actions button {
+    margin: 0;
+}
+
+
+/* =========================
+   COPY BUTTON
+========================= */
+
+#copyButton {
+    background: #111827;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 10px 14px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+#copyButton:hover {
+    background: #374151;
+}
+
+
+/* =========================
+   SHOW / HIDE
+========================= */
+
+#showButton {
+    background: #475569;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 10px 12px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+#showButton:hover {
+    background: #334155;
+}
+
+
+/* =========================
+   PASSWORD LENGTH
+========================= */
+
+.length-section {
+    margin-bottom: 25px;
+}
+
+.length-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+.length-header label {
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #374151;
+
+    transition: 0.4s;
+}
+
+#lengthValue {
+    background: #2563eb;
+
+    color: white;
+
+    padding: 5px 11px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   RANGE
+========================= */
+
+input[type="range"] {
+    width: 100%;
+
+    height: 7px;
+
+    cursor: pointer;
+
+    accent-color: #2563eb;
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.options {
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    margin-bottom: 25px;
+
+    text-align: left;
+
+    transition: 0.4s;
+}
+
+.options label {
+    display: block;
+
+    margin: 12px 0;
+
+    color: #374151;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.options input {
+    margin-right: 10px;
+
+    accent-color: #2563eb;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   GENERATE BUTTON
+========================= */
+
+.generate-button {
+    display: block;
+
+    width: 100%;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    color: white;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+
+    transition: 0.2s;
+}
+
+.generate-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(37, 99, 235, 0.35);
+}
+
+
+/* =========================
+   STRENGTH
+========================= */
+
+.strength-section {
+    margin-top: 20px;
+
+    margin-bottom: 25px;
+}
+
+#strength {
+    font-weight: bold;
+
+    font-size: 16px;
+
+    color: #374151;
+
+    margin-bottom: 10px;
+
+    transition: 0.4s;
+}
+
+.strength-bar {
+    width: 100%;
+
+    height: 9px;
+
+    background: #e5e7eb;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#strengthFill {
+    height: 100%;
+
+    width: 0%;
+
+    background: #22c55e;
+
+    border-radius: 20px;
+
+    transition: width 0.3s ease;
+}
+
+
+/* =========================
+   HISTORY
+========================= */
+
+.history-section {
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 15px;
+
+    margin-top: 20px;
+
+    text-align: left;
+
+    transition: 0.4s;
+}
+
+.history-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+.history-header h2 {
+    margin: 0;
+
+    font-size: 17px;
+
+    color: #374151;
+
+    transition: 0.4s;
+}
+
+#clearHistoryButton {
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    border: none;
+
+    padding: 7px 10px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.history-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    padding: 9px;
+
+    border-radius: 8px;
+
+    margin-top: 8px;
+}
+
+.history-password {
+    flex: 1;
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+    word-break: break-all;
+
+    color: #111827;
+
+    transition: 0.4s;
+}
+
+.history-copy {
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    padding: 6px 9px;
+
+    cursor: pointer;
+}
+
+.empty-history {
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   SECURITY TIPS
+========================= */
+
+.security-tips {
+    margin-top: 20px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 14px;
+
+    padding: 15px;
+
+    text-align: left;
+
+    transition: 0.4s;
+}
+
+.security-tips h2 {
+    margin-top: 0;
+
+    font-size: 17px;
+
+    color: #1e40af;
+
+    transition: 0.4s;
+}
+
+.security-tips p {
+    font-size: 13px;
+
+    color: #475569;
+
+    margin: 7px 0;
+
+    transition: 0.4s;
+}
+
+
+/* =========================
+   CLEAR BUTTON
+========================= */
+
+.clear-button {
+    display: block;
+
+    width: 100%;
+
+    background: #dc2626;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+}
+
+.clear-button:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================
+   CREATOR
+========================= */
+
+.creator-section {
+    margin-top: 32px;
+
+    text-align: center;
+}
+
+.creator-line {
+    width: 60px;
+
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    border-radius: 10px;
+
+    margin: 0 auto 18px;
+}
+
+.creator-label {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    transition: 0.4s;
+}
+
+.creator-section h2 {
+    margin: 6px 0;
+
+    font-size: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.creator-description {
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    max-width: 340px;
+
+    margin: 0 auto 12px;
+
+    transition: 0.4s;
+}
+
+.creator-badge {
+    display: inline-block;
+
+    background: #f1f5f9;
+
+    border: 1px solid #e2e8f0;
+
+    color: #475569;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    transition: 0.4s;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 18px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+    background: linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e1b4b
+    );
+}
+
+body.dark-mode .container {
+    background: #111827;
+
+    color: #f8fafc;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.65);
+}
+
+body.dark-mode h1 {
+    color: #f8fafc;
+}
+
+body.dark-mode .subtitle {
+    color: #94a3b8;
+}
+
+body.dark-mode #themeButton {
+    background: #334155;
+
+    color: white;
+}
+
+body.dark-mode .password-box {
+    background: #1e293b;
+
+    border-color: #475569;
+}
+
+body.dark-mode .password-box p {
+    color: #f8fafc;
+}
+
+body.dark-mode .length-header label {
+    color: #e2e8f0;
+}
+
+body.dark-mode .options {
+    background: #1e293b;
+
+    border-color: #334155;
+}
+
+body.dark-mode .options label {
+    color: #e2e8f0;
+}
+
+body.dark-mode #strength {
+    color: #e2e8f0;
+}
+
+body.dark-mode .strength-bar {
+    background: #334155;
+}
+
+body.dark-mode .history-section {
+    background: #1e293b;
+
+    border-color: #334155;
+}
+
+body.dark-mode .history-header h2 {
+    color: #e2e8f0;
+}
+
+body.dark-mode .history-item {
+    background: #0f172a;
+
+    border-color: #334155;
+}
+
+body.dark-mode .history-password {
+    color: #f8fafc;
+}
+
+body.dark-mode .security-tips {
+    background: #172554;
+
+    border-color: #1e40af;
+}
+
+body.dark-mode .security-tips h2 {
+    color: #93c5fd;
+}
+
+body.dark-mode .security-tips p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .creator-label {
+    color: #94a3b8;
+}
+
+body.dark-mode .creator-description {
+    color: #94a3b8;
+}
+
+body.dark-mode .creator-badge {
+    background: #1e293b;
+
+    border-color: #334155;
+
+    color: #cbd5e1;
+}
+
+body.dark-mode footer {
+    color: #64748b;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 25px 18px;
+
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .password-box {
+        flex-direction: column;
+    }
+
+    .password-box p {
+        width: 100%;
+    }
+
+    .password-actions {
+        width: 100%;
+    }
+
+    .password-actions button {
+        flex: 1;
+    }
+
+    #themeButton {
+        top: 12px;
+
+        right: 12px;
+
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 19px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 0;
+
+        margin: 0;
+    }
+
+    .history-item {
+        align-items: flex-start;
+    }
+
+    .creator-section h2 {
+        font-size: 23px;
+    }
+}
